@@ -2,10 +2,10 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 
 publish {
-    userOrg = 'taoge'                         //bintray.com用户名
-    groupId = 'com.ytman'                     //jcenter上的路径
-    artifactId = 'YTAOLibrary'           //项目名称
-    publishVersion = '1.0.0'                   //版本号
+    userOrg = 'taoge'                        //bintray.com用户名
+    groupId = 'com.ytman'                    //jcenter上的路径
+    artifactId = 'YTAOLibrary'              //项目名称
+    publishVersion = '1.0.0'                //版本号
     desc = '多功能库'
     website = 'https://github.com'
 }
@@ -36,7 +36,7 @@ dependencies {
 
     compileOnly 'com.android.support:appcompat-v7:28.0.0'
 
-    testImplementation 'junit:junit:4.12'
-    androidTestCompileOnly 'com.android.support.test:runner:1.0.2'
+    testCompileOnly 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
