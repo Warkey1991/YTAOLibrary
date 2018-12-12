@@ -5,7 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-public class MainActivity extends AppCompatActivity implements OnLocationListener {
+import com.ytlibrary.dialog.DialogLibrary;
+import com.ytlibrary.dialog.impl.DialogLibraryImpl;
+
+public class MainActivity extends AppCompatActivity  {
     private Context context = MainActivity.this;
 
     @Override
@@ -13,11 +16,31 @@ public class MainActivity extends AppCompatActivity implements OnLocationListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new ToolUtils(context).onCreate();
+        iniTest();
     }
 
-    @Override
-    public void onSuccess(double longitude, double latitude, String myLocation) {
-        Log.e("yutao", longitude + ", " + latitude + ", " + myLocation);
+    public void iniTest(){
+
+        DialogLibrary dialogLibrary = new DialogLibraryImpl(context);
+        dialogLibrary.bottomDialog("打击武器", "方法",
+                new DialogLibrary.OnBottomDialogClickListener() {
+            @Override
+            public void onTopButtonClick() {
+
+            }
+
+            @Override
+            public void onMidButonClick() {
+
+            }
+
+            @Override
+            public void onCancelButtonClick() {
+
+            }
+        });
+
     }
+
+
 }

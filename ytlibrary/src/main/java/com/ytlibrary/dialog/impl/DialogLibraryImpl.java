@@ -107,7 +107,7 @@ public class DialogLibraryImpl implements DialogLibrary {
     @Override
     public void bottomDialog(String topButtonName, String midButtonName,
                              final OnBottomDialogClickListener onBottomDialogClickListener) {
-        final Dialog dialog = new Dialog(context, R.style.alert_dialog);
+        final Dialog dialog = new Dialog(context, R.style.MyDialog);
         View view = View.inflate(context, R.layout.dialog_bottom_sheet, null);
         dialog.setContentView(view);
         dialog.setCanceledOnTouchOutside(true);
