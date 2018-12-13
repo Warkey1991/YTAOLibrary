@@ -1,18 +1,24 @@
 package com.ytlibrary.dialog.impl;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ytlibrary.R;
-import com.ytlibrary.dialog.DialogLibrary;
+import com.ytlibrary.dialog.IDialog;
 import com.ytlibrary.util.SystemUtils;
 import com.zyao89.view.zloading.ZLoadingDialog;
 import com.zyao89.view.zloading.Z_TYPE;
@@ -22,25 +28,24 @@ import com.zyao89.view.zloading.Z_TYPE;
  * Description 功能说明
  * Time 2018/12/12 16:42
  */
-public class DialogLibraryImpl implements DialogLibrary {
+public class DialogLibrary implements IDialog {
     private Context context;
     private static Context myContext;
-    private static DialogLibraryImpl instance;
+    private static DialogLibrary instance;
 
-    public DialogLibraryImpl(Context mContext){
+    public DialogLibrary(Context mContext){
         context = mContext;
         myContext = mContext;
     }
 
-    public static DialogLibraryImpl getInstance(){
+    public static DialogLibrary getInstance(){
         if(instance == null){
-            instance = new DialogLibraryImpl(myContext);
+            instance = new DialogLibrary(myContext);
         }
         return instance;
     }
 
     /*****************************调用Github上高级自定义等待动画----开始*********************************/
-
     private  ZLoadingDialog myDialog;
     private  Z_TYPE type;
     private  int color = Color.WHITE;
@@ -100,10 +105,9 @@ public class DialogLibraryImpl implements DialogLibrary {
     public void closeWaitDialog() {
         myDialog.dismiss();
     }
-
     /*****************************调用Github上高级自定义等待动画----结束*********************************/
 
-
+    /*****************************底部选择控件----开始*********************************/
     @Override
     public void bottomDialog(String topButtonName, String midButtonName,
                              final OnBottomDialogClickListener onBottomDialogClickListener) {
@@ -157,6 +161,89 @@ public class DialogLibraryImpl implements DialogLibrary {
             }
         });
     }
+    /*****************************底部选择控件----结束*********************************/
+
+    /*****************************基础对话控件----开始*********************************/
+    @Override
+    public void baseDialog(String title, String message, String positiveButtonName, String negativeButtonName,
+                           final OnBaseDialogClickListener onBaseDialogClickListener) {
+        AlertDialog alertDialog = new AlertDialog.Builder(context, R.style.AlertDialog)
+                .setTitle(title).setMessage(message)
+                .setPositiveButton(positiveButtonName, new DialogInterface.OnClickListener() {//添加"Yes"按钮
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        onBaseDialogClickListener.positiveOnClick();
+                    }
+                })
+                .setNegativeButton(negativeButtonName, new DialogInterface.OnClickListener() {//添加取消
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        onBaseDialogClickListener.negativeOnClick();
+                    }
+                }).create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.show();
+
+    }
+    /*****************************基础对话控件----结束*********************************/
+
+    /*****************************简单提示控件----开始*********************************/
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    @Override
+    public void promptDialog(String message,String buttonName, final OnPromptAlertClickListener onPromptAlertClickListener) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(context, R.style.AlertDialog);
+        dialog.setPositiveButton(buttonName, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        final AlertDialog alertDialog = dialog.create();
+//        TextView title = new TextView(context);
+//        title.setText("");
+//        title.setPadding(10, 30, 10, 10);
+//        title.setGravity(Gravity.CENTER);
+//        title.setTextSize(18);
+//        title.setTextColor(Color.BLACK);
+        TextView myMessage = new TextView(context);
+        myMessage.setText(message);
+        myMessage.setPadding(10, 50, 10, 30);
+        myMessage.setGravity(Gravity.CENTER);
+        myMessage.setTextSize(18);
+        myMessage.setTextColor(Color.GRAY);
+//        alertDialog.setCustomTitle(title);
+        alertDialog.setView(myMessage);  //提示消息
+        alertDialog.setCancelable(false);
+        alertDialog.show();
+        Button button = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+        LinearLayout.LayoutParams cancelBtnPara = (LinearLayout.LayoutParams) button.getLayoutParams();
+        //设置按钮的大小
+        cancelBtnPara.height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        cancelBtnPara.width = LinearLayout.LayoutParams.MATCH_PARENT;
+        //设置文字居中
+        cancelBtnPara.gravity = Gravity.CENTER;
+        //设置按钮左上右下的距离
+        cancelBtnPara.setMargins(100, 30, 100, 15);
+        button.setLayoutParams(cancelBtnPara);
+        button.setBackground(ContextCompat.getDrawable(context, R.color.transparent));
+        button.setTextColor(ContextCompat.getColor(context, R.color.blue));
+        button.setTextSize(19);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
+                onPromptAlertClickListener.buttonOnClick();
+            }
+        });
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    @Override
+    public void promptDialog(String message) {
+        promptDialog(message, "知道了",null);
+    }
+    /*****************************简单提示控件----结束*********************************/
 
 
 

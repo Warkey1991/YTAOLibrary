@@ -3,10 +3,9 @@ package com.ytaolibrary;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 
-import com.ytlibrary.dialog.DialogLibrary;
-import com.ytlibrary.dialog.impl.DialogLibraryImpl;
+import com.ytlibrary.dialog.IDialog;
+import com.ytlibrary.dialog.impl.DialogLibrary;
 
 public class MainActivity extends AppCompatActivity  {
     private Context context = MainActivity.this;
@@ -19,28 +18,10 @@ public class MainActivity extends AppCompatActivity  {
         iniTest();
     }
 
-    public void iniTest(){
+    public void iniTest() {
+        IDialog dialogLibrary = new DialogLibrary(context);
 
-        DialogLibrary dialogLibrary = new DialogLibraryImpl(context);
-        dialogLibrary.bottomDialog("打击武器", "方法",
-                new DialogLibrary.OnBottomDialogClickListener() {
-            @Override
-            public void onTopButtonClick() {
-
-            }
-
-            @Override
-            public void onMidButonClick() {
-
-            }
-
-            @Override
-            public void onCancelButtonClick() {
-
-            }
-        });
 
     }
-
 
 }

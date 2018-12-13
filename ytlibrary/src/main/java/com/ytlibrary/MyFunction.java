@@ -8,9 +8,9 @@ import android.widget.Toast;
  * Describe: 测试库
  */
 public class MyFunction {
+
     public static void showToast(Context context, String message){
         Toast.makeText(context, message + "功能库测试", Toast.LENGTH_LONG).show();
     }
-
 
 }
