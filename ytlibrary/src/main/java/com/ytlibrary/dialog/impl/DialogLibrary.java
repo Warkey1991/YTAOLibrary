@@ -233,7 +233,10 @@ public class DialogLibrary implements IDialog {
             @Override
             public void onClick(View v) {
                 alertDialog.dismiss();
-                onPromptAlertClickListener.buttonOnClick();
+                if(onPromptAlertClickListener != null){
+                    onPromptAlertClickListener.buttonOnClick();
+                }
+
             }
         });
     }

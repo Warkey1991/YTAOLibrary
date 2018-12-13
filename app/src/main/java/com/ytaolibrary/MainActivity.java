@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity  {
     public void iniTest() {
         IDialog dialogLibrary = new DialogLibrary(context);
 
+        dialogLibrary.promptDialog("阿斯见覅偶进去覅武器基督教巨大的巨大的近段时间是竞技场美妆相机阿斯哦积分撒娇");
 
     }
 
