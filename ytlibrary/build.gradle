@@ -5,7 +5,7 @@ publish {
     userOrg = 'taoge'                        //bintray.com用户名
     groupId = 'com.ytman'                    //jcenter上的路径
     artifactId = 'YTAOLibrary'              //项目名称
-    publishVersion = '1.0.4'                //版本号
+    publishVersion = '1.0.5'                //版本号
     desc = '多功能库'
     website = 'https://github.com'
 }

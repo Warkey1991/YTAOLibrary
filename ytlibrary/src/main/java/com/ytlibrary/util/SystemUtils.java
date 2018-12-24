@@ -12,7 +12,6 @@ import android.view.WindowManager;
 public class SystemUtils {
     /**
      * 获得屏幕宽度
-     *
      * @param context
      * @return
      */

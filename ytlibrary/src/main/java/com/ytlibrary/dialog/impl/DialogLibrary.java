@@ -25,10 +25,10 @@ import com.zyao89.view.zloading.Z_TYPE;
 
 /**
  * Author 余涛
- * Description 功能说明
+ * Description Dialog功能库接口实现
  * Time 2018/12/12 16:42
  */
-public class DialogLibrary implements IDialog {
+public class DialogLibrary implements IDialogLibrary {
     private Context context;
     private static Context myContext;
     private static DialogLibrary instance;
@@ -163,6 +163,7 @@ public class DialogLibrary implements IDialog {
     }
     /*****************************底部选择控件----结束*********************************/
 
+
     /*****************************基础对话控件----开始*********************************/
     @Override
     public void baseDialog(String title, String message, String positiveButtonName, String negativeButtonName,
@@ -183,14 +184,33 @@ public class DialogLibrary implements IDialog {
                 }).create();
         alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.show();
+    }
 
+    @Override
+    public void baseDialog(String title, String message, final OnSimBaseDialogClickListener onBaseDialogClickListener) {
+        AlertDialog alertDialog = new AlertDialog.Builder(context, R.style.AlertDialog)
+                .setTitle(title).setMessage(message)
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {//添加"Yes"按钮
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        onBaseDialogClickListener.positiveOnClick();
+                    }
+                })
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {//添加取消
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        //点击取消,不进行操作
+                    }
+                }).create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.show();
     }
     /*****************************基础对话控件----结束*********************************/
 
     /*****************************简单提示控件----开始*********************************/
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
-    public void promptDialog(String message,String buttonName, final OnPromptAlertClickListener onPromptAlertClickListener) {
+    public void promptDialog(String message,String buttonName, final OnPromptDialogClickListener onPromptDialogClickListener) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(context, R.style.AlertDialog);
         dialog.setPositiveButton(buttonName, new DialogInterface.OnClickListener() {
             @Override
@@ -233,10 +253,7 @@ public class DialogLibrary implements IDialog {
             @Override
             public void onClick(View v) {
                 alertDialog.dismiss();
-                if(onPromptAlertClickListener != null){
-                    onPromptAlertClickListener.buttonOnClick();
-                }
-
+                onPromptDialogClickListener.buttonOnClick();
             }
         });
     }
@@ -244,7 +261,12 @@ public class DialogLibrary implements IDialog {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void promptDialog(String message) {
-        promptDialog(message, "知道了",null);
+        promptDialog(message, "知道了", new OnPromptDialogClickListener() {
+            @Override
+            public void buttonOnClick() {
+                //空逻辑
+            }
+        });
     }
     /*****************************简单提示控件----结束*********************************/
 

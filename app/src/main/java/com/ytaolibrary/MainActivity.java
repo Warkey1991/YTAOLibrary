@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.ytlibrary.dialog.IDialog;
 import com.ytlibrary.dialog.impl.DialogLibrary;
+import com.ytlibrary.dialog.impl.IDialogLibrary;
 
 public class MainActivity extends AppCompatActivity  {
     private Context context = MainActivity.this;
@@ -19,9 +20,9 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     public void iniTest() {
-        IDialog dialogLibrary = new DialogLibrary(context);
+        IDialogLibrary dialogLibrary = new DialogLibrary(context);
 
-        dialogLibrary.promptDialog("阿斯见覅偶进去覅武器基督教巨大的巨大的近段时间是竞技场美妆相机阿斯哦积分撒娇");
+        dialogLibrary.promptDialog("测试一下效果怎么样是那个防守打法封口费爱就爱加分附加费积分加分放进书架福建省附近");
 
     }
 
