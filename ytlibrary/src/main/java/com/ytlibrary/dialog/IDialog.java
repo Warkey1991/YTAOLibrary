@@ -4,7 +4,7 @@ import android.content.Context;
 
 /**
  * Author 余涛
- * Description Dialog功能
+ * Description Dialog功能总接口，从该接口总类，可直观的浏览功能模块
  * Time 2018/12/12 17:23
  */
 public interface IDialog {
