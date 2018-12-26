@@ -22,7 +22,24 @@ public class MainActivity extends AppCompatActivity  {
     public void iniTest() {
         IDialogLibrary dialogLibrary = new DialogLibrary(context);
 
-        dialogLibrary.promptDialog("测试一下效果怎么样是那个防守打法封口费爱就爱加分附加费积分加分放进书架福建省附近");
+//        dialogLibrary.promptDialog("测试一下效果怎么样是那个防守打法封口费爱就爱加分附加费积分加分放进书架福建省附近");
+
+        dialogLibrary.bottomDialog("12", "中间", new IDialog.bottomDialog.OnBottomDialogClick() {
+            @Override
+            public void onTopButtonClick() {
+
+            }
+
+            @Override
+            public void onMidButonClick() {
+
+            }
+
+            @Override
+            public void onCancelButtonClick() {
+
+            }
+        });
 
     }
 

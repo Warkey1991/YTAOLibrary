@@ -110,11 +110,11 @@ public class DialogLibrary implements IDialogLibrary {
     /*****************************底部选择控件----开始*********************************/
     @Override
     public void bottomDialog(String topButtonName, String midButtonName,
-                             final OnBottomDialogClickListener onBottomDialogClickListener) {
+                             final OnBottomDialogClick onBottomDialogClick) {
         final Dialog dialog = new Dialog(context, R.style.MyDialog);
         View view = View.inflate(context, R.layout.dialog_bottom_sheet, null);
         dialog.setContentView(view);
-        dialog.setCanceledOnTouchOutside(true);
+        dialog.setCanceledOnTouchOutside(false); //点击其他部分不消失
         view.setMinimumHeight((int) (SystemUtils.getScreenHeight(context) * 0.23f));
         Window dialogWindow = dialog.getWindow();
         WindowManager.LayoutParams lp = dialogWindow.getAttributes();
@@ -136,7 +136,7 @@ public class DialogLibrary implements IDialogLibrary {
         topText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBottomDialogClickListener.onTopButtonClick();
+                onBottomDialogClick.onTopButtonClick();
                 dialog.cancel();
             }
         });
@@ -146,7 +146,7 @@ public class DialogLibrary implements IDialogLibrary {
         midText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBottomDialogClickListener.onMidButonClick();
+                onBottomDialogClick.onMidButonClick();
                 dialog.cancel();
             }
         });
@@ -156,7 +156,7 @@ public class DialogLibrary implements IDialogLibrary {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBottomDialogClickListener.onCancelButtonClick();
+                onBottomDialogClick.onCancelButtonClick();
                 dialog.cancel();
             }
         });
@@ -167,19 +167,19 @@ public class DialogLibrary implements IDialogLibrary {
     /*****************************基础对话控件----开始*********************************/
     @Override
     public void baseDialog(String title, String message, String positiveButtonName, String negativeButtonName,
-                           final OnBaseDialogClickListener onBaseDialogClickListener) {
+                           final OnBaseDialogClick onBaseDialogClick) {
         AlertDialog alertDialog = new AlertDialog.Builder(context, R.style.AlertDialog)
                 .setTitle(title).setMessage(message)
                 .setPositiveButton(positiveButtonName, new DialogInterface.OnClickListener() {//添加"Yes"按钮
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
-                        onBaseDialogClickListener.positiveOnClick();
+                        onBaseDialogClick.positiveOnClick();
                     }
                 })
                 .setNegativeButton(negativeButtonName, new DialogInterface.OnClickListener() {//添加取消
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
-                        onBaseDialogClickListener.negativeOnClick();
+                        onBaseDialogClick.negativeOnClick();
                     }
                 }).create();
         alertDialog.setCanceledOnTouchOutside(false);
@@ -187,13 +187,13 @@ public class DialogLibrary implements IDialogLibrary {
     }
 
     @Override
-    public void baseDialog(String title, String message, final OnSimBaseDialogClickListener onBaseDialogClickListener) {
+    public void baseDialog(String title, String message, final OnSimBaseDialogClick onBaseDialogClick) {
         AlertDialog alertDialog = new AlertDialog.Builder(context, R.style.AlertDialog)
                 .setTitle(title).setMessage(message)
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {//添加"Yes"按钮
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
-                        onBaseDialogClickListener.positiveOnClick();
+                        onBaseDialogClick.positiveOnClick();
                     }
                 })
                 .setNegativeButton("取消", new DialogInterface.OnClickListener() {//添加取消
@@ -210,7 +210,7 @@ public class DialogLibrary implements IDialogLibrary {
     /*****************************简单提示控件----开始*********************************/
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
-    public void promptDialog(String message,String buttonName, final OnPromptDialogClickListener onPromptDialogClickListener) {
+    public void promptDialog(String message,String buttonName, final OnPromptDialogClick onPromptDialogClick) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(context, R.style.AlertDialog);
         dialog.setPositiveButton(buttonName, new DialogInterface.OnClickListener() {
             @Override
@@ -253,7 +253,7 @@ public class DialogLibrary implements IDialogLibrary {
             @Override
             public void onClick(View v) {
                 alertDialog.dismiss();
-                onPromptDialogClickListener.buttonOnClick();
+                onPromptDialogClick.buttonOnClick();
             }
         });
     }
@@ -261,7 +261,7 @@ public class DialogLibrary implements IDialogLibrary {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void promptDialog(String message) {
-        promptDialog(message, "知道了", new OnPromptDialogClickListener() {
+        promptDialog(message, "知道了", new OnPromptDialogClick() {
             @Override
             public void buttonOnClick() {
                 //空逻辑

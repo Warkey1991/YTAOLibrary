@@ -44,15 +44,15 @@ public interface IDialog {
          * 底部弹出式，选择dialog
          * @param topButtonName 顶部button名
          * @param midButtonName  中间button名
-         * @param onBottomDialogClickListener 接口监听点击事件
+         * @param onBottomDialogClick 接口监听点击事件
          */
-        void bottomDialog(String topButtonName , String midButtonName, final OnBottomDialogClickListener onBottomDialogClickListener);
+        void bottomDialog(String topButtonName , String midButtonName, final OnBottomDialogClick onBottomDialogClick);
 
 
         /**
          * bottomDialog辅助监听接口
          */
-        interface OnBottomDialogClickListener{
+        interface OnBottomDialogClick{
             /**
              * 顶部按钮点击事件
              */
@@ -78,9 +78,9 @@ public interface IDialog {
          * @param title
          * @param message
          */
-        void baseDialog(String title, String message, OnSimBaseDialogClickListener onBaseDialogClickListener);
+        void baseDialog(String title, String message, OnSimBaseDialogClick onBaseDialogClick);
 
-        interface OnSimBaseDialogClickListener{
+        interface OnSimBaseDialogClick{
             /**
              * 确定按钮点击事件
              */
@@ -93,12 +93,12 @@ public interface IDialog {
          * @param message 主体信息
          * @param positiveButtonName position按钮名
          * @param negativeButtonName negative按钮名
-         * @param onBaseDialogClickListener  监听点击事件
+         * @param onBaseDialogClick  监听点击事件
          */
         void baseDialog(String title, String message, String positiveButtonName, String negativeButtonName,
-                        final OnBaseDialogClickListener onBaseDialogClickListener );
+                        final OnBaseDialogClick onBaseDialogClick );
 
-        interface OnBaseDialogClickListener{
+        interface OnBaseDialogClick{
             /**
              * 确定按钮点击事件
              */
@@ -122,11 +122,11 @@ public interface IDialog {
          * 简单提示dialog
          * @param message 提示信息
          * @param buttonName  按钮名
-         * @param onPromptAlertClickListener  监听点击按钮接口
+         * @param onPromptAlertClick  监听点击按钮接口
          */
-        void promptDialog(String message, String buttonName, final OnPromptDialogClickListener onPromptAlertClickListener );
+        void promptDialog(String message, String buttonName, final OnPromptDialogClick onPromptAlertClick );
 
-        interface OnPromptDialogClickListener{
+        interface OnPromptDialogClick{
             /**
              * 按钮点击事件
              */
