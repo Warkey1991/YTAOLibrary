@@ -3,7 +3,9 @@
 ## 引入
 
 > - 在gradle(Module:app)里添加配置：
-` implementation 'com.ytman:YTAOLibrary:1.0.8' `
+```
+implementation 'com.ytman:YTAOLibrary:1.0.8' 
+```
 
 
 ## Dialog篇
