@@ -6,7 +6,7 @@
 
 > - 在gradle(Module:app)里添加配置：
 ```
-implementation 'com.ytman:YTAOLibrary:1.0.8' 
+implementation 'com.yt:YTAOLibrary:1.0.8' 
 ```
 
 
