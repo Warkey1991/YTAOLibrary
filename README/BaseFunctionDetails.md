@@ -1,4 +1,8 @@
-[僵小鱼图片]:(https://raw.githubusercontent.com/CNAD666/YTAOLibrary/master/README/one.jpg)
+[僵小鱼图片]:https://raw.githubusercontent.com/CNAD666/YTAOLibrary/master/README/picture/one.jpg
+<!--
+ ![僵小鱼][僵小鱼图片] &nbsp; </br>
+-->
+
 
 #### 使用基础功能前需要初始化：
 ```
@@ -13,4 +17,9 @@ showToast("测试");  //默认弹出时间短
 showToast("测试",Toast.LENGTH_SHORT); //弹出时间短  
 showToast("测试",Toast.LENGTH_LONG);  //弹出时间长
 ```
-![僵小鱼][僵小鱼图片]
+
+<img src="/README/picture/one.jpg"
+width = "100" height = "100" div align=left />
+
+<img src="/README/picture/one.jpg"
+width = "100" height = "100" div align=left />
