@@ -22,4 +22,5 @@ implementation 'com.yt:YTAOLibrary:1.0.8'
 <img src="/README/picture/waitDialog.gif" width = "337" height = "600" div align=left />
 <img src="/README/picture/bottomDialog.jpg" width = "337" height = "600" div align=left />
 
+<img src="/README/picture/blank.jpg" width = "800" height = "20" div align=left />
 <img src="/README/picture/baseDialog.jpg" width = "337" height = "600" div align=left />
