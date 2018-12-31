@@ -18,8 +18,5 @@ showToast("测试",Toast.LENGTH_SHORT); //弹出时间短
 showToast("测试",Toast.LENGTH_LONG);  //弹出时间长
 ```
 
-<img src="/README/picture/one.jpg"
-width = "100" height = "100" div align=left />
-
-<img src="/README/picture/one.jpg"
-width = "100" height = "100" div align=left />
+<img src="/README/picture/showToast.jpg"
+width = "180" height = "360" div align=left />
