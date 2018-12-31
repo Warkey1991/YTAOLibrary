@@ -5,7 +5,7 @@ publish {
     userOrg = 'taoge'                        //bintray.com用户名
     groupId = 'com.yt'                    //jcenter上的路径
     artifactId = 'YTAOLibrary'              //项目名称
-    publishVersion = '1.0.8'                //版本号
+    publishVersion = '1.0.9'                //版本号
     desc = '多功能库'
     website = 'https://github.com'
 }
@@ -37,6 +37,8 @@ android {
 }
 
 dependencies {
+    //    implementation 'com.yt:YTAOLibrary:1.0.8'
+
     compileOnly fileTree(dir: 'libs', include: ['*.jar'])
 
     compileOnly 'com.android.support:appcompat-v7:28.0.0'

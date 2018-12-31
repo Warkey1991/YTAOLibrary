@@ -19,7 +19,7 @@ android {
 }
 
 dependencies {
-//    implementation 'com.ytman:YTAOLibrary:1.0.1'
+//    implementation 'com.yt:YTAOLibrary:1.0.1'
     implementation project(path: ':ytlibrary')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
