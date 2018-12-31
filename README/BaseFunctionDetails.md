@@ -1,3 +1,5 @@
+[僵小鱼图片]:(https://raw.githubusercontent.com/CNAD666/YTAOLibrary/master/README/one.jpg)
+
 #### 使用基础功能前需要初始化：
 ```
 new BaseFunction(this);
@@ -7,7 +9,8 @@ new BaseFunction(this);
 ```
 showToast("测试");  //默认弹出时间短  
 
-//设置弹出时间 
+//设置弹出时间
 showToast("测试",Toast.LENGTH_SHORT); //弹出时间短  
 showToast("测试",Toast.LENGTH_LONG);  //弹出时间长
 ```
+![僵小鱼][僵小鱼图片]
