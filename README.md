@@ -19,4 +19,3 @@ implementation 'com.yt:YTAOLibrary:1.0.8'
 > - 进入详细讲解：[dialog详细讲解](https://github.com/CNAD666/YTAOLibrary/blob/master/README/DialogDetails.md)
 > - 效果图：
 <img src="/README/picture/waitDialog.gif" width = "337" height = "600" div align=left />
-<img src="/README/picture/waitDialog.gif" width = "337" height = "600" div align=left />
