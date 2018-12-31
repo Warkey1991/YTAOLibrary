@@ -1,6 +1,7 @@
 [僵小鱼图片]:https://raw.githubusercontent.com/CNAD666/YTAOLibrary/master/README/picture/one.jpg
 <!--
  ![僵小鱼][僵小鱼图片] &nbsp; </br>
+ <img src="/README/picture/showToast.jpg" width = "239" height = "426" div align=left />
 -->
 
 
@@ -18,6 +19,4 @@ showToast("测试",Toast.LENGTH_SHORT); //弹出时间短
 showToast("测试",Toast.LENGTH_LONG);  //弹出时间长
 ```
 
-<img src="/README/picture/showToast.jpg" width = "239" height = "426" div align=left />
-<img src="/README/picture/showToast.jpg" width = "239" height = "426" div align=left />
-<img src="/README/picture/showToast.jpg" width = "239" height = "426" div align=left />
+<img src="/README/picture/showToast.jpg" width = "337" height = "600" div align=left />
