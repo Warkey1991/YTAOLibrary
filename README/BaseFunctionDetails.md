@@ -19,4 +19,4 @@ showToast("测试",Toast.LENGTH_LONG);  //弹出时间长
 ```
 
 <img src="/README/picture/showToast.jpg"
-width = "360" height = "720" div align=left />
+width = "281" height = "500" div align=left />
