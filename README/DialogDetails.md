@@ -1,10 +1,10 @@
-## Dialog篇
-### 使用封装的dialog控件需要先实例化对象
+# Dialog篇
+## 使用封装的dialog控件需要先实例化对象
 ```
 IDialogLibrary dialogLibrary = new DialogLibrary(this);
 ```
-### 等待弹窗(waitDialog)
-#### 使用方式:
+## 等待弹窗(waitDialog)
+### 使用方式:
 
 - **极简使用:只需要传一个变量,message 类型字符串(String)**
 ```
@@ -16,8 +16,8 @@ dialogLibrary.waitDialog("测试");
 
 ```
 
-### 底部弹窗(bottomDialog)
-#### 使用方式:
+## 底部弹窗(bottomDialog)
+### 使用方式:
 ```
 dialogLibrary.bottomDialog("顶部（替换）", "中间（替换）", new IDialog.bottomDialog.OnBottomDialogClick() {
             @Override
