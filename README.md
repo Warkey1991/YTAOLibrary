@@ -8,7 +8,7 @@
 ## 引入
 - 在gradle(Module:app)里添加配置：
 ```
-implementation 'com.yt:YTAOLibrary:1.0.11'
+implementation 'com.ytman:YTAOLibrary:1.0.18'
 ```
 
 ## 说明
