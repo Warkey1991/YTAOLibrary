@@ -43,7 +43,7 @@ dialogLibrary.waitDialog("测试",13, "#6C6C6C");
 #### 使用方式:
 - 极简使用：传俩个变量，实现一个接口。</br>
 第一个，顶部按钮名（topButtonName）String类型；第二个，中间按钮名（midButtonName）String类型；第三个，实现 OnBottomDialogClick 接口。</br>
-实现接口全称：new IDialog.bottomDialog.OnBottomDialogClick(){...}，IDialog.bottomDialog.* 。</br>
+实现接口全称：new IDialog.bottomDialog.OnBottomDialogClick(){...}。</br>
 抱歉名字比较长，为了规范化接口方法名管理，使逻辑结构更清晰，思考了很久，才选择定义了二重接口。
 ```
 dialogLibrary.bottomDialog("顶部（替换）", "中间（替换）", new IDialog.bottomDialog.OnBottomDialogClick() {
@@ -90,6 +90,43 @@ dialogLibrary.bottomDialog("顶部按钮", "#008577", "中间按钮", "#00574B",
 - 效果图
 <img src="/README/picture/bottomDialogOne.png" width = "337" height = "600"/>
 
+***
+</br>
+
+### 基础弹窗（baseDialog）
+#### 使用方式：
+- 极简使用：俩个变量，实现一个接口。</br>
+第一个，标题（title）String类型；第二个，消息内容（message）String类型；实现OnBaseDialogClick接口。
+```
+dialogLibrary.baseDialog("测试", "测试内容展示", new IDialog.baseDialog.OnBaseDialogClick() {
+            @Override
+            public void positiveOnClick() {
+                showToast("测试"); //该方法来自基本功能库
+            }
+        });
+```
+- 效果图
+<img src="/README/picture/baseDialogOne.png" width = "337" height = "600"/>
+
+- 高级使用：四个变量，实现一个接口。</br>
+第一个，标题（title）String类型；第二个，消息内容（message）String类型；第三个，positive按钮（positiveButtonName）String类型；第四个，negative按钮（negativeButtonName）String类型。</br>
+实现 OnBaseDialogHighClick 接口。具体使用见下方代码范例。
+```
+dialogLibrary.baseDialog("测试", "测试内容显示", "积极按钮", "消极按钮",
+        new IDialog.baseDialog.OnBaseDialogHighClick() {
+            @Override
+            public void positiveOnClick() {
+                //写入你的逻辑
+            }
+
+            @Override
+            public void negativeOnClick() {
+                //写入你的逻辑
+            }
+        });
+```
+- 效果图
+<img src="/README/picture/baseDialogTwo.png" width = "337" height = "600"/>
 
 ***
 </br>
