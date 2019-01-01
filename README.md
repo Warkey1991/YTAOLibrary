@@ -29,3 +29,6 @@ implementation 'com.yt:YTAOLibrary:1.0.10'
 <img src="/README/picture/baseDialog.jpg" width = "239" height = "426" div align=left />
 
 <img src="/README/picture/blank.jpg" width = "800" height = "20" div align=left />
+
+***
+</br>
