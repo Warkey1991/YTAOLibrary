@@ -1,4 +1,7 @@
-
+<!--
+<img src="/README/picture/baseDialog.jpg" width = "265" height = "471" div align=left />
+&nbsp; </br>
+-->
 # YTAOLibrary库
 该Android库封装了一些Android常用的控件和功能，长期更新...
 
@@ -24,11 +27,11 @@ implementation 'com.yt:YTAOLibrary:1.0.10'
 - 进入详细讲解：[dialog详细讲解](https://github.com/CNAD666/YTAOLibrary/blob/master/README/DialogDetails.md)
 - 效果图
 
-<img src="/README/picture/waitDialog.gif" width = "239" height = "426" div align=left />
-<img src="/README/picture/bottomDialog.jpg" width = "239" height = "426" div align=left />
-<img src="/README/picture/baseDialog.jpg" width = "239" height = "426" div align=left />
+<img src="/README/picture/waitDialog.gif" width = "265" height = "471" div align=left />
+<img src="/README/picture/bottomDialog.jpg" width = "265" height = "471" div align=left />
+<img src="/README/picture/baseDialog.jpg" width = "265" height = "471" div align=left />
 
-<img src="/README/picture/blank.jpg" width = "800" height = "20" div align=left />
+<img src="/README/picture/blank.jpg" width = "800" height = "20" />
 
 ***
 </br>
