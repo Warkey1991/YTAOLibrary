@@ -4,7 +4,7 @@
 IDialogLibrary dialogLibrary = new DialogLibrary(this);
 ```
 
-</br>
+</br></br>
 ### 等待弹窗(waitDialog)
 #### 说明：该控件是对另一依赖库的进一步封装，详细请看 [自定义Loading View库](https://github.com/zyao89/ZLoading)
 #### 使用方式:
@@ -34,7 +34,7 @@ dialogLibrary.waitDialog("测试",13, "#6C6C6C");
 - 效果图
 <img src="/README/picture/waitDialogTwo.gif" width = "337" height = "600"/>
 
-</br>
+</br></br>
 ### 底部弹窗(bottomDialog)
 #### 使用方式:
 ```
