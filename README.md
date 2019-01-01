@@ -15,7 +15,7 @@ implementation 'com.yt:YTAOLibrary:1.0.10'
 - 进入详细讲解：[BaseFunction详细讲解](https://github.com/CNAD666/YTAOLibrary/blob/master/README/BaseFunctionDetails.md)
 - 效果图
 
-<img src="/README/picture/showToast.jpg" width = "239" height = "426" />
+<img src="/README/picture/showToast.png" width = "239" height = "426" />
 
 ***
 </br>
