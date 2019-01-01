@@ -41,6 +41,8 @@ dialogLibrary.waitDialog("测试",13, "#6C6C6C");
 
 ### 底部弹窗(bottomDialog)
 #### 使用方式:
+- 说明：传三个变量，第一个，顶部按钮名（topButtonName）String类型；第二个，中间按钮名（midButtonName）String类型；第三个，实现 OnBottomDialogClick 接口。
+实现接口全称：new IDialog.bottomDialog.OnBottomDialogClick(){...}，IDialog.bottomDialog.* ，抱歉名字比较长，为了规范化接口方法名管理，思考了很久，不得已定义了二重接口。
 ```
 dialogLibrary.bottomDialog("顶部（替换）", "中间（替换）", new IDialog.bottomDialog.OnBottomDialogClick() {
             @Override
@@ -59,3 +61,10 @@ dialogLibrary.bottomDialog("顶部（替换）", "中间（替换）", new IDial
             }
         });
 ```
+- 效果图
+<img src="/README/picture/bottomDialog.jpg" width = "337" height = "600"/>
+
+***
+</br>
+
+### 提示弹窗（promptDialog）
