@@ -44,7 +44,7 @@ dialogLibrary.waitDialog("测试",13, "#6C6C6C");
 - 极简使用：传俩个变量，实现一个接口。</br>
 第一个，顶部按钮名（topButtonName）String类型；第二个，中间按钮名（midButtonName）String类型；第三个，实现 OnBottomDialogClick 接口。</br>
 实现接口全称：new IDialog.bottomDialog.OnBottomDialogClick(){...}，IDialog.bottomDialog.* 。</br>
-抱歉名字比较长，为了规范化接口方法名管理，是逻辑结构更清楚，思考了很久，不得已定义了二重接口。
+抱歉名字比较长，为了规范化接口方法名管理，使逻辑结构更清晰，思考了很久，才选择定义了二重接口。
 ```
 dialogLibrary.bottomDialog("顶部（替换）", "中间（替换）", new IDialog.bottomDialog.OnBottomDialogClick() {
             @Override
