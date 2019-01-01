@@ -6,12 +6,12 @@ IDialogLibrary dialogLibrary = new DialogLibrary(this);
 ## 等待弹窗(waitDialog)
 ### 使用方式:
 
-- **极简使用:只需要传一个变量,message 类型字符串(String)**
+- 极简使用:只需要传一个变量，类型字符串(String)
 ```
 dialogLibrary.waitDialog("测试");
 ```
 
-- **二重使用:**
+- 二重使用:
 ```
 
 ```
